@@ -45,8 +45,6 @@ io.on('connection', (socket) => {
     }, 400);
   }
 
-  socket.emit('news', { hello: 'world' });
-
   socket.on('takeoff', () => {
     console.log('takeoff');
     drone.takeoffOrLand();
@@ -59,11 +57,11 @@ io.on('connection', (socket) => {
 
   socket.on('move', (direction) => {
     console.log(`moving ${direction}`);
-    switch (keyName) {
-      case 'up':
+    switch (direction) {
+      case 'forward':
         flightParams.pitch = inputSensitivity;
         break;
-      case 'down':
+      case 'backward':
         flightParams.pitch = -inputSensitivity;
         break;
       case 'left':
@@ -71,6 +69,7 @@ io.on('connection', (socket) => {
         break;
       case 'right':
         flightParams.roll = inputSensitivity;
+        break;
       default:
         break;
     }
@@ -79,7 +78,7 @@ io.on('connection', (socket) => {
 
   socket.on('turn', (direction) => {
     console.log(`turning ${direction}`);
-    switch (keyName) {
+    switch (direction) {
       case 'up':
         flightParams.altitude = inputSensitivity;
         break;
