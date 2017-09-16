@@ -11,12 +11,12 @@ app.get('/', (req, res) => {
   res.json({ status: 'listening' });
 });
 
-io.on('connection', (socket) => {
-  const drone = new Mambo({
-    droneFilter: config.droneName,
-    autoconnect: true,
-  });
+const drone = new Mambo({
+  droneFilter: config.droneName,
+  autoconnect: true,
+});
 
+io.on('connection', (socket) => {
   const timeout = null;
 
   const inputSensitivity = 70;
