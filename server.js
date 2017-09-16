@@ -103,7 +103,7 @@ io.on('connection', (socket) => {
     drone.trim();
   });
 
-  socket.on('escape', () => {
+  socket.on('emergency', () => {
     console.log('emergency land');
     drone.emergency();
   });
