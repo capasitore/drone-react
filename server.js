@@ -17,7 +17,7 @@ const drone = new Mambo({
 });
 
 io.on('connection', (socket) => {
-  const timeout = null;
+  let timeout = null;
 
   const inputSensitivity = 70;
 

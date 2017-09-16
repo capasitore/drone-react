@@ -4,7 +4,7 @@
 }
 
 .header {
-  background: black;
+  background: #1A1110;
   color: white;
   text-align: center;
   text-transform: uppercase;
@@ -21,7 +21,7 @@
   position: absolute;
   height: 230px;
   width: 119px;
-  background-color: #BDC3C7;
+  background-color: #1A1110;
   transform: rotate(8deg);
   top: 139px;
   left: 124px;
@@ -31,7 +31,7 @@
   position: absolute;
   height: 230px;
   width: 119px;
-  background-color: #BDC3C7;
+  background-color: #1A1110;
   transform: rotate(-8deg);
   top: 139px;
   left: 17px;
@@ -40,7 +40,7 @@
 .handle_bottom {
   height: 200px;
   width: 200px;
-  background-color: #BDC3C7;
+  background-color: #1A1110;
   border-radius: 50%;
   position: absolute;
   top: 250px;
@@ -52,7 +52,7 @@
   position: absolute;
   height: 50px;
   width: 50px;
-  background-color: black;
+  background-color: #1A1110;
   border: 0;
   border-radius: 50%;
 }
@@ -80,7 +80,7 @@
 .action_button {
   height: 50px;
   width: 100px;
-  background-color: black;
+  background-color: #869198;
   border: 0;
   border-radius: 5px;
   margin: 0 5px;
@@ -96,11 +96,11 @@
   position: absolute;
   height: 260px;
   width: 260px;
-  background-color: #BDC3C7;
+  background-color: #1A1110;
   border-radius: 50%;
   z-index: 2;
   top: 200px;
-  box-shadow: 0 0 20px -5px black;
+  box-shadow: 0 0 20px -5px #869198;
 }
 .cover {
   position: absolute;
@@ -131,7 +131,7 @@
   position: absolute;
   height: 230px;
   width: 420px;
-  background-color: #BDC3C7;
+  background-color: #1A1110;
   top: 230px;
   left: calc(50% - 210px);
   z-index: 1;
@@ -140,7 +140,8 @@
   text-align: center;
 }
 .logo {
-  margin: 30px 80px;
+  width: 100px;
+  margin: 10px;
 }
 
 /** WIRE **/
