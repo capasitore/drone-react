@@ -5,8 +5,6 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Controller from './components/Controller';
 
-import './App.css';
-
 const socket = Socket('http://localhost:3001');
 class App extends Component {
   constructor() {
@@ -121,7 +119,7 @@ class App extends Component {
 
   render() {
     return (
-      <div className="wrapper">
+      <div>
         <Header />
         <Controller
           move={this.move}
