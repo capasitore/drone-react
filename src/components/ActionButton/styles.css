@@ -1,0 +1,13 @@
+/** ACTION BUTTONS **/
+.action_button {
+  height: 50px;
+  width: 100px;
+  background-color: #869198;
+  border: 0;
+  border-radius: 5px;
+  margin: 0 5px;
+  color: white;
+}
+.action_button-red {
+  background-color: rgba(211, 81, 81, 0.63);
+}

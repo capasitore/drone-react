@@ -1,0 +1,9 @@
+.footer {
+  padding: 0 30px;
+}
+
+.footer_logo {
+  float: right;
+  width: 50px;
+  height: auto;
+}

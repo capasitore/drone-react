@@ -1,0 +1,9 @@
+.header {
+  background: #1A1110;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  padding: 50px 0;
+  font-size: 34px;
+  font-family: 'Montserrat', sans-serif;
+}

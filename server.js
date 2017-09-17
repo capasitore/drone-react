@@ -58,10 +58,10 @@ io.on('connection', (socket) => {
   socket.on('move', (direction) => {
     console.log(`moving ${direction}`);
     switch (direction) {
-      case 'forward':
+      case 'up': // forward
         flightParams.pitch = inputSensitivity;
         break;
-      case 'backward':
+      case 'down': // backward
         flightParams.pitch = -inputSensitivity;
         break;
       case 'left':
