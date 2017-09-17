@@ -21,5 +21,6 @@ You won't be able to find the minidrone via a normal bluetooth device search as 
 
 ## Thanks to
 - [This parrot mini-drone node library](https://github.com/fetherston/npm-parrot-minidrone).
-- [create-react-app](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html) for making get started on building a React app so easy!
-- This [anonymous codepen](https://codepen.io/anon/pen/PJPNzX) which was used as a starting point for the controller CSS.
+- [create-react-app](https://facebook.github.io/react/blog/2016/07/22/create-apps-with-no-configuration.html) for making get started on building a React app so easy! a starting point for the controller CSS.
+- Credits:
+  - Drone icon by mikicon from the Noun Project
