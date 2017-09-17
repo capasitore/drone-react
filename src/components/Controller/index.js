@@ -20,7 +20,7 @@ const Controller = ({move, turn, takeoff, emergency, connected, batteryLevel, fl
         <ControlButton action={turn} direction="left" icon="fa-undo" />
       </div>
       <div className="joypad-mid">
-        <Drone connected={connected} />
+        <Drone connected={connected} flightStatus={flightStatus} />
         <Battery percent={batteryLevel} />
         <div>
           <ActionButton action={takeoff} label={takeOffText} />

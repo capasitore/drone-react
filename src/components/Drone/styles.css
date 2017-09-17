@@ -1,17 +1,38 @@
 .drone {
-  width: 150px;
+  position: relative;
   margin: 10px 10px 0;
+  font-size: 11px;
+}
+
+.drone-icon {
+  width: 150px;
   fill: #1A1110;
 }
 
+.drone-connect {
+  position: absolute;
+  top: 70px;
+  left: calc(50% - 4.5px);
+}
+
 .drone-connected {
-  fill: green;
+  color: green;
 }
 
 .drone-connecting {
+  animation-name: connecting;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+
+.drone-hovering {
   animation-name: flash;
   animation-duration: .7s;
   animation-iteration-count: infinite;
+}
+
+.drone-flying {
+  fill: green;
 }
 
 @keyframes flash {
@@ -20,5 +41,14 @@
   }
   to {
     fill: orange;
+  }
+}
+
+@keyframes connecting {
+  from {
+    color: white;
+  }
+  to {
+    color: orange;
   }
 }

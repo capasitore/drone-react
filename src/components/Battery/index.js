@@ -1,6 +1,15 @@
 import React from 'react';
 import './styles.css';
 
+const BatteryContent = (icon, percent) => {
+  return (
+    <div className="battery">
+      <i className={`fa ${icon} battery-icon`} aria-hidden="true" />
+      <span className="battery-label">{percent}%</span>
+    </div>
+  );
+};
+
 const Battery = ({ percent }) => {
   let icon = 'fa-battery-empty';
   
@@ -14,10 +23,16 @@ const Battery = ({ percent }) => {
     icon = 'fa-battery-quarter';
   }
 
+  let batteryContent;
+  if (percent) {
+    batteryContent = BatteryContent(icon, percent);
+  } else {
+    batteryContent = '';
+  }
+
   return (
-    <div className="battery">
-      <i className={`fa ${icon} battery-icon`} aria-hidden="true" />
-      <span className="battery-label">{percent}%</span>
+    <div>
+      {batteryContent}
     </div>
   );
 };

@@ -15,7 +15,7 @@ class App extends Component {
     // state
     this.state = {
       connected: false,
-      batteryLevel: 100,
+      batteryLevel: false,
       flightStatus: 'landed'
     };
   }
