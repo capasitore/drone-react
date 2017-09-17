@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
+    "dualshock-controller": "^1.1.1",
     "express": "^4.15.4",
+    "keypress": "^0.2.1",
     "nodemon": "^1.12.1",
     "parrot-minidrone": "robertbg/npm-parrot-minidrone",
     "react": "^15.6.1",

@@ -2148,6 +2148,12 @@ dualshock-controller@^0.6.9:
     joystick "^0.1.1"
     node-hid "^0.5.0"
 
+dualshock-controller@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/dualshock-controller/-/dualshock-controller-1.1.1.tgz#96d8894d3abc1252b1c7a59547f92da12d1f6f81"
+  dependencies:
+    node-hid "^0.5.0"
+
 duplexer2@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer2/-/duplexer2-0.1.4.tgz#8b12dab878c0d69e3e7891051662a32fc6bddcc1"
