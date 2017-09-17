@@ -11,9 +11,9 @@ const Drone = ({ connected, flightStatus }) => {
     connectedText = 'Connected';
   }
 
-  if (flightStatus === 'hovering' || flightStatus === 'landing') {
+  if (flightStatus === 'taking off' || flightStatus === 'landing') {
     flightClasses = 'drone-hovering';
-  } else if (flightStatus === 'flying') {
+  } else if (flightStatus === 'hovering') {
     flightClasses = 'drone-flying';
   }
 

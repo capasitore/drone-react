@@ -6,10 +6,10 @@ import Battery from '../Battery';
 import ControlButton from '../ControlButton';
 import ActionButton from '../ActionButton';
 
-const Controller = ({move, turn, takeoff, emergency, connected, batteryLevel, flightStatus}) => {
-  let takeOffText = 'Take-Off';
+const Controller = ({move, turn, takeoffOrLand, emergency, connected, batteryLevel, flightStatus}) => {
+  let takeOffOrLandText = 'Take-Off';
   if (flightStatus !== 'landed') {
-    takeOffText= 'Land';
+    takeOffOrLandText= 'Land';
   }
   return (
     <div className="controller">
@@ -23,7 +23,7 @@ const Controller = ({move, turn, takeoff, emergency, connected, batteryLevel, fl
         <Drone connected={connected} flightStatus={flightStatus} />
         <Battery percent={batteryLevel} />
         <div>
-          <ActionButton action={takeoff} label={takeOffText} />
+          <ActionButton action={takeoffOrLand} label={takeOffOrLandText} />
           <ActionButton action={emergency} label="Stop" />
         </div>
       </div>

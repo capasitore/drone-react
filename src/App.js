@@ -37,11 +37,11 @@ class App extends Component {
     });
   }
 
-  takeoff(e) {
+  takeoffOrLand(e) {
     if (e) e.preventDefault();
 
-    console.log('takeoff()');
-    socket.emit('takeoff');
+    console.log('takeoffOrLand()');
+    socket.emit('takeoffOrLand');
   }
 
   move(direction, e) {
@@ -72,7 +72,7 @@ class App extends Component {
         <Controller
           move={this.move}
           turn={this.turn}
-          takeoff={this.takeoff}
+          takeoffOrLand={this.takeoffOrLand}
           emergency={this.emergency}
           connected={this.state.connected}
           batteryLevel={this.state.batteryLevel}
