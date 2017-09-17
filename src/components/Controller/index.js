@@ -9,7 +9,7 @@ import ActionButton from '../ActionButton';
 const Controller = ({move, turn, takeoffOrLand, emergency, connected, batteryLevel, flightStatus}) => {
   let takeOffOrLandText = 'Take-Off';
   if (flightStatus !== 'landed') {
-    takeOffOrLandText= 'Land';
+    takeOffOrLandText = 'Land';
   }
   return (
     <div className="controller">
