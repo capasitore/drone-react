@@ -2,8 +2,20 @@
   background: #1A1110;
   color: white;
   text-align: center;
-  text-transform: uppercase;
-  padding: 50px 0;
+  padding: 30px 0;
+}
+
+.header_logo {
+  width: 120px;
+  height: auto;
+}
+
+.header_title {
   font-size: 34px;
   font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+}
+
+.header_info-small {
+  font-size: 12px;
 }
