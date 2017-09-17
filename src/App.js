@@ -35,6 +35,12 @@ class App extends Component {
       this.setState({ flightStatus: status });
       console.log('isFlying', status);
     });
+
+    document.addEventListener('keydown', this.onKeydown.bind(this));
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.onKeydown);
   }
 
   takeoffOrLand(e) {
@@ -58,11 +64,59 @@ class App extends Component {
     socket.emit('turn', direction);
   }
 
+  trim(e) {
+    if (e) e.preventDefault();
+    
+    console.log('trim()');
+    socket.emit('trim');
+  }
+
   emergency(e) {
     if (e) e.preventDefault();
 
     console.log('emergency()');
     socket.emit('emergency');
+  }
+
+  onKeydown(e) {
+    if (e) e.preventDefault();
+    switch (e.which) {
+      case 38: // Up arrow
+        this.move('forward');
+        break;
+      case 40: // Down arrow
+        this.move('backward');
+        break;
+      case 37: // Left arrow
+        this.move('left');
+        break;
+      case 39: // Right arrow
+        this.move('right');
+        break;
+      case 87: // w
+        this.turn('up');
+        break;
+      case 83: // s
+        this.turn('down');
+        break;
+      case 65: // a
+        this.turn('left');
+        break;
+      case 68: // d
+        this.turn('right');
+        break;
+      case 84: // t
+        this.takeoffOrLand();
+        break;
+      case 70: // f
+        this.trim();
+        break;
+      case 27: // escape
+        this.emergency();
+        break;
+      default:
+        break;
+    }
   }
 
   render() {
