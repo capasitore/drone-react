@@ -27,46 +27,46 @@ You won't be able to find the minidrone via a normal bluetooth device search as 
 ### Keyboard Controls
 To fly with the keyboard follow the below instructions.
 
-  1. Turn on the drone
-  1. Run `node cli/keyboard.js`
-  1. Wait to see the drone connected message in the console output
+1. Turn on the drone
+1. Run `node cli/keyboard.js`
+1. Wait to see the drone connected message in the console output
 
-  #### Control Layout
-  *Key* | Function
-  --- | ---
-  **Arrow Up** | Pitch +
-  **Arrow Down** | Pitch -
-  **Left Arrow** | Roll left
-  **Left Arrow** | Roll right
-  **w** | Altitude +
-  **s** | Altitude +
-  **a** | Yaw left
-  **d** | Yaw right
-  **t** | Toggle takeoff & land
-  **f** | Flattrim
-  **Escape** | Emergency land
+#### Control Layout
+*Key* | Function
+--- | ---
+**Arrow Up** | Pitch +
+**Arrow Down** | Pitch -
+**Left Arrow** | Roll left
+**Left Arrow** | Roll right
+**w** | Altitude +
+**s** | Altitude +
+**a** | Yaw left
+**d** | Yaw right
+**t** | Toggle takeoff & land
+**f** | Flattrim
+**Escape** | Emergency land
 
 ### Dualshock PlayStation Controller
-- Follow these directions from the root of the project to fly with a PS3/4 controller
+Follow these directions from the root of the project to fly with a PS3/4 controller
 
-  1. Turn on the drone
-  1. Plug in the controller via USB or connect to your computer via Bluetooth
-  1. Run `node cli/ps4.js`
-  1. Wait to see the drone connected message in the console output
+1. Turn on the drone
+1. Plug in the controller via USB or connect to your computer via Bluetooth
+1. Run `node cli/ps4.js`
+1. Wait to see the drone connected message in the console output
 
-  #### Control Layout
-  *Button* | Function
-  --- | ---
-  **Right Analog Stick** | Altitude, yaw
-  **Left Analog Stick** | Roll, pitch
-  **Square** | Flat-trim
-  **Triangle** | Toggle takeoff & land
-  **Circle** | Emergency landing
-  **X** | Take a picture
-  **L1** | Left flip
-  **R1** | Right Flip
-  **L2** | Front Flip
-  **R2** | Back Flip
+#### Control Layout
+*Button* | Function
+--- | ---
+**Right Analog Stick** | Altitude, yaw
+**Left Analog Stick** | Roll, pitch
+**Square** | Flat-trim
+**Triangle** | Toggle takeoff & land
+**Circle** | Emergency landing
+**X** | Take a picture
+**L1** | Left flip
+**R1** | Right Flip
+**L2** | Front Flip
+**R2** | Back Flip
 
 ## Thanks to
 - [This parrot mini-drone node library](https://github.com/fetherston/npm-parrot-minidrone).
