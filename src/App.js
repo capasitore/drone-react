@@ -3,7 +3,7 @@ import Socket from 'socket.io-client';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
-import Controller from './containers/Controller';
+import Controller from './components/Controller';
 
 import './App.css';
 
