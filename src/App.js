@@ -9,6 +9,34 @@ import './App.css';
 
 const socket = Socket('http://localhost:3001');
 class App extends Component {
+  constructor() {
+    super();
+
+    // state
+    this.state = {
+      connected: false,
+      batteryLevel: 100,
+      flightStatus: 'landed'
+    };
+  }
+
+  componentDidMount() {
+    socket.on('connected', () => {
+      this.setState({ connected: true });
+      console.log('connected');
+    });
+
+    socket.on('batteryStatusChange', level => {
+      this.setState({ batteryLevel: level });
+      console.log('Battery Level', level);
+    });
+    
+    socket.on('flightStatusChange', status => {
+      this.setState({ flightStatus: status });
+      console.log('isFlying', status);
+    });
+  }
+
   takeoff(e) {
     if (e) e.preventDefault();
 
@@ -46,6 +74,9 @@ class App extends Component {
           turn={this.turn}
           takeoff={this.takeoff}
           emergency={this.emergency}
+          connected={this.state.connected}
+          batteryLevel={this.state.batteryLevel}
+          flightStatus={this.state.flightStatus}
         />
         <Footer />
       </div>

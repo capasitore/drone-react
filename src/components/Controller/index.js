@@ -1,12 +1,16 @@
 import React from 'react';
 import './styles.css';
 
-import logo from './drone.svg';
-
+import Drone from '../Drone';
+import Battery from '../Battery';
 import ControlButton from '../ControlButton';
 import ActionButton from '../ActionButton';
 
-const Controller = ({move, turn, takeoff, emergency}) => {
+const Controller = ({move, turn, takeoff, emergency, connected, batteryLevel, flightStatus}) => {
+  let takeOffText = 'Take-Off';
+  if (flightStatus !== 'landed') {
+    takeOffText= 'Land';
+  }
   return (
     <div className="controller">
       <div className="joypad">
@@ -16,9 +20,10 @@ const Controller = ({move, turn, takeoff, emergency}) => {
         <ControlButton action={turn} direction="left" icon="fa-undo" />
       </div>
       <div className="joypad-mid">
-        <img src={logo} className="logo" alt="" />
+        <Drone connected={connected} />
+        <Battery percent={batteryLevel} />
         <div>
-          <ActionButton action={takeoff} label="Take-Off" />
+          <ActionButton action={takeoff} label={takeOffText} />
           <ActionButton action={emergency} label="Stop" />
         </div>
       </div>

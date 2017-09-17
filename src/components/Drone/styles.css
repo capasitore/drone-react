@@ -1,0 +1,24 @@
+.drone {
+  width: 150px;
+  margin: 10px 10px 0;
+  fill: #1A1110;
+}
+
+.drone-connected {
+  fill: green;
+}
+
+.drone-connecting {
+  animation-name: flash;
+  animation-duration: .7s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes flash {
+  from {
+    fill: #1A1110;
+  }
+  to {
+    fill: orange;
+  }
+}

@@ -5,6 +5,8 @@ const Mambo = require('parrot-minidrone');
 
 const config = require('./config');
 
+let connected = false;
+
 server.listen(3001);
 
 app.get('/', (req, res) => {
@@ -14,6 +16,10 @@ app.get('/', (req, res) => {
 const drone = new Mambo({
   droneFilter: config.droneName,
   autoconnect: true,
+});
+
+drone.on('connected', () => {
+  connected = true
 });
 
 io.on('connection', (socket) => {
@@ -44,6 +50,12 @@ io.on('connection', (socket) => {
       });
     }, 400);
   }
+
+  if (connected) socket.emit('connected');
+  else drone.on('connected', () => socket.emit('connected'));
+
+  drone.on('batteryStatusChange', level => socket.emit('batteryStatusChange', level));
+  drone.on('flightStatusChange', obj => socket.emit('flightStatusChange', obj));
 
   socket.on('takeoff', () => {
     console.log('takeoff');

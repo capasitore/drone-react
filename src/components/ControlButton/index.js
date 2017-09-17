@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-const Icon = icon => <i className={`fa ${icon}`} aria-hidden="true"></i>
+const Icon = icon => <i className={`fa ${icon}`} aria-hidden="true" />;
 
 const ControlButton = ({ action, direction, icon }) => {
   const classes = `control_button control_button-${direction}`
