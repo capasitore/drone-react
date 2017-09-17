@@ -13,7 +13,11 @@ app.get('/', (req, res) => {
 
 let connected = false;
 const drone = new Mambo({
+  updateMS: 400,
   droneFilter: config.droneName,
+  maxVerticalSpeed: config.maxVerticalSpeed,
+  maxRotationSpeed: config.maxRotationSpeed,
+  maxAltitude: config.maxAltitude,
   autoconnect: true,
 });
 
@@ -22,13 +26,8 @@ drone.on('connected', () => {
 });
 
 io.on('connection', (socket) => {
-  let timeout = null;
-
   const inputSensitivity = 70;
-
-  if (timeout) {
-    clearTimeout(timeout);
-  }
+  const timeOutLength = 300;
 
   const flightParams = {
     yaw: 0,
@@ -37,33 +36,34 @@ io.on('connection', (socket) => {
     altitude: 0,
   };
 
-  const action = () => {
-    drone.setFlightParams(flightParams);
-    timeout = setTimeout(() => {
-      drone.setFlightParams({
-        yaw: 0,
-        pitch: 0,
-        roll: 0,
-        altitude: 0,
-      });
-    }, 400);
-  }
+  const resetFlightParams = () => {
+    drone.setFlightParams({
+      yaw: 0,
+      pitch: 0,
+      roll: 0,
+      altitude: 0,
+    });
+  };
 
   if (connected) socket.emit('connected');
   else drone.on('connected', () => socket.emit('connected'));
 
   drone.on('batteryStatusChange', level => socket.emit('batteryStatusChange', level));
-  drone.on('flightStatusChange', obj => socket.emit('flightStatusChange', obj));
+  drone.on('flightStatusChange', status => socket.emit('flightStatusChange', status));
+  drone.on('flightParamChange', params => socket.emit('flightParamChange', params));
+
 
   socket.on('takeoffOrLand', () => {
     console.log('takeoffOrLand');
     drone.takeoffOrLand();
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
 
   socket.on('move', (direction) => {
     console.log(`moving ${direction}`);
     switch (direction) {
-      case 'forward': 
+      case 'forward':
         flightParams.pitch = inputSensitivity;
         break;
       case 'backward':
@@ -78,7 +78,8 @@ io.on('connection', (socket) => {
       default:
         break;
     }
-    action();
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
 
   socket.on('turn', (direction) => {
@@ -99,21 +100,28 @@ io.on('connection', (socket) => {
       default:
         break;
     }
-    action();
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
 
   socket.on('trim', () => {
     console.log('flat trim');
     drone.trim();
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
-  
+
   socket.on('animate', method => {
     console.log('animating', method);
     drone.animate(method);
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
 
   socket.on('emergency', () => {
     console.log('emergency land');
     drone.emergency();
+    drone.setFlightParams(flightParams);
+    setTimeout(resetFlightParams, timeOutLength);
   });
 });

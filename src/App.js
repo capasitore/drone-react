@@ -28,10 +28,14 @@ class App extends Component {
       this.setState({ batteryLevel: level });
       console.log('Battery Level', level);
     });
-    
+
     socket.on('flightStatusChange', status => {
       this.setState({ flightStatus: status });
       console.log('isFlying', status);
+    });
+
+    socket.on('flightParamChange', params => {
+      console.log('Flight Params', params);
     });
 
     document.addEventListener('keydown', this.onKeydown.bind(this));
@@ -64,7 +68,7 @@ class App extends Component {
 
   trim(e) {
     if (e) e.preventDefault();
-    
+
     console.log('trim()');
     socket.emit('trim');
   }
