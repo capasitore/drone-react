@@ -63,10 +63,10 @@ io.on('connection', (socket) => {
   socket.on('move', (direction) => {
     console.log(`moving ${direction}`);
     switch (direction) {
-      case 'up': // forward
+      case 'forward': 
         flightParams.pitch = inputSensitivity;
         break;
-      case 'down': // backward
+      case 'backward':
         flightParams.pitch = -inputSensitivity;
         break;
       case 'left':
@@ -105,6 +105,11 @@ io.on('connection', (socket) => {
   socket.on('trim', () => {
     console.log('flat trim');
     drone.trim();
+  });
+  
+  socket.on('animate', method => {
+    console.log('animating', method);
+    drone.animate(method);
   });
 
   socket.on('emergency', () => {
