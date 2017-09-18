@@ -1,6 +1,8 @@
 # Drone UI for Parrot Minidrones
 Just for fun, built using React / Express and Socket.io.
 
+![Drone UI Screenshot](https://raw.githubusercontent.com/robertbg/drone-react/develop/screenshot.png)
+
 ## Usage Instructions
 - `yarn install`
 - Connect to minidrone via Bluetooth (instructions below)
