@@ -1,12 +1,14 @@
 /** ACTION BUTTONS **/
 .action_button {
-  height: 50px;
-  width: 100px;
-  background-color: #1A1110;
-  border: 0;
-  border-radius: 5px;
   margin: 0 5px;
-  color: white;
+  padding: 15px 30px;
+  border-radius: 5px;
+}
+.action_button:hover {
+	top: 2px;
+}
+.action_button:active {
+	top: 6px;
 }
 .action_button-red {
   background-color: rgba(211, 81, 81, 0.63);

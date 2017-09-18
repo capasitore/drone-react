@@ -1,12 +1,16 @@
 /** CONTROL BUTTONS **/
 .control_button {
   position: absolute;
-  height: 60px;
-  width: 60px;
-  background-color: #869198;
-  border: 0;
   border-radius: 50%;
-  font-size: 36px;
+	width: 60px;
+	height: 60px;
+	padding: 0;
+}
+.control_button:hover {
+	margin-top: 2px;
+}
+.control_button:active {
+	margin-top: 6px;
 }
 .control_button-up, .control_button-forward {
   top: 15px;
@@ -17,7 +21,7 @@
   right: 15px;
 }
 .control_button-down, .control_button-backward {
-  bottom: 15px;
+  top: calc(100% - 80px);
   left: calc(50% - 30px);
 }
 .control_button-left {

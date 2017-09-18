@@ -1,22 +1,22 @@
 .drone {
   position: relative;
   margin: 10px 10px 0;
-  font-size: 11px;
+  font-size: 12px;
 }
 
 .drone-icon {
   width: 150px;
-  fill: #1A1110;
+  fill: #21271C;
 }
 
 .drone-connect {
   position: absolute;
-  top: 70px;
-  left: calc(50% - 4.5px);
+  top: 67px;
+  left: calc(50% - 5px);
 }
 
 .drone-connected {
-  color: green;
+  color: #A6DD7F;
 }
 
 .drone-connecting {
@@ -32,7 +32,7 @@
 }
 
 .drone-flying {
-  fill: green;
+  fill: #A6DD7F;
 }
 
 .drone-emergency {
@@ -46,24 +46,24 @@
     fill: #1A1110;
   }
   to {
-    fill: orange;
+    fill: #E2995A;
   }
 }
 
 @keyframes flashred {
   from {
-    fill: #1A1110;
+    fill: #21271C;
   }
   to {
-    fill: red;
+    fill: #CD4A50;
   }
 }
 
 @keyframes connecting {
   from {
-    color: white;
+    color: #fff;
   }
   to {
-    color: orange;
+    color: #E2995A;
   }
 }

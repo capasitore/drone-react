@@ -4,7 +4,7 @@ import './styles.css';
 const Icon = icon => <i className={`fa ${icon}`} aria-hidden="true" />;
 
 const ControlButton = ({ action, direction, icon }) => {
-  const classes = `control_button control_button-${direction}`
+  const classes = `button control_button control_button-${direction}`
   let buttonIcon = '';
   if (icon) buttonIcon = Icon(icon);
 
