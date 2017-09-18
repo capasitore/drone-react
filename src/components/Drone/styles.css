@@ -25,7 +25,7 @@
   animation-iteration-count: infinite;
 }
 
-.drone-hovering {
+.drone-landing {
   animation-name: flash;
   animation-duration: .7s;
   animation-iteration-count: infinite;

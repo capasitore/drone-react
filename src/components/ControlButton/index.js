@@ -1,16 +1,10 @@
 import React from 'react';
 import './styles.css';
 
-const Icon = icon => <i className={`fa ${icon}`} aria-hidden="true" />;
-
 const ControlButton = ({ action, direction, icon }) => {
-  const classes = `button control_button control_button-${direction}`
-  let buttonIcon = '';
-  if (icon) buttonIcon = Icon(icon);
-
   return (
-    <button className={classes} onClick={action.bind(null, direction)}>
-      {buttonIcon}
+    <button className={`button control_button control_button-${direction}`} onClick={action.bind(null, direction)}>
+      <i className={`fa ${icon}`} aria-hidden="true" />
     </button>
   )
 };
